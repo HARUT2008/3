@@ -1,18 +1,26 @@
 #include <iostream>
 #include <string>
 
+
+int getNumber(std::string text) {
+    int num;
+    std::cout << text;
+    std::cin >> num;
+    return num;
+}
+
+int glueNumbers(int a, int b) {
+    std::string result = std::to_string(a) + std::to_string(b);
+    return std::stoi(result); 
+}
+
 int main() {
-    int num1, num2;
-    std::cout << "Enter first number: ";
-    std::cin >> num1;
+    int x = getNumber("Մուտքագրեք առաջին թիվը: ");
+    int y = getNumber("Մուտքագրեք երկրորդ թիվը: ");
 
-    std::cout << "Enter second number: ";
-    std::cin >> num2;
+    int answer = glueNumbers(x, y);
 
-    std::string result = std::to_string(num1) + std::to_string(num2);
-    int concatenated = std::stoi(result);
-
-    std::cout << "Concatenated number: " << concatenated << std::endl;
+    std::cout << "Միացված թիվը՝ " << answer << std::endl;
 
     return 0;
 }
